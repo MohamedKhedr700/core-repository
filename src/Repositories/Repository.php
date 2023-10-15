@@ -32,19 +32,19 @@ use Raid\Core\Repository\Traits\Repository\Utilizable;
 
 abstract class Repository implements RepositoryInterface, AccountableInterface, ActionableInterface, ConfigurableInterface, EventableInterface, FillableInterface, GateableInterface, ModelableInterface, ModulableInterface, QueryableInterface, TransformableInterface, UtilizableInterface
 {
-    use Accountable,
-        Actionable,
-        Configurable,
-        Deletable,
-        Eventable,
-        Fillable,
-        Gateable,
-        Modelable,
-        Modulable,
-        Queryable,
-        Retrievable,
-        Transformable,
-        Utilizable;
+    use Accountable;
+    use Actionable;
+    use Configurable;
+    use Deletable;
+    use Eventable;
+    use Fillable;
+    use Gateable;
+    use Modelable;
+    use Modulable;
+    use Queryable;
+    use Retrievable;
+    use Transformable;
+    use Utilizable;
 
     /**
      * Create a new repository instance.

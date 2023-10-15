@@ -4,8 +4,8 @@ namespace Raid\Core\Repository\Traits\Repository;
 
 use ArrayKeysCaseTransform\ArrayKeys;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Modules\Core\Models\Contracts\ModelInterface;
-use Modules\Core\Models\Model;
+use Raid\Core\Model\Models\Contracts\ModelInterface;
+use Raid\Core\Model\Models\Model;
 
 trait Fillable
 {

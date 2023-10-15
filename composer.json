@@ -7,6 +7,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.2",
+        "deoliveiralucas/array-keys-case-transform": "^1.1",
         "raid/core-action": "dev-main",
         "raid/core-auth": "dev-main",
         "raid/core-command": "dev-main",
