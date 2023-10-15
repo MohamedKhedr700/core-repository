@@ -1,0 +1,29 @@
+{
+    "name": "raid/core-repository",
+    "description": "Raid Core Repository",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "require": {
+        "raid/core-command": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Raid\\Core\\Repository\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Raid\\Core\\Repository\\Providers\\RepositoryServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "mohamedkhedr700",
+            "email": "mohamedkhedr700@gmail.com"
+        }
+    ]
+}
