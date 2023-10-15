@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Core\Repository\Traits;
+namespace Modules\Core\Repository\Traits\Provider;
 
 trait WithRepositoryProvider
 {

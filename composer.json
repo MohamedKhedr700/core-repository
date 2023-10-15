@@ -6,7 +6,13 @@
     "version": "1.0.0",
     "minimum-stability": "dev",
     "require": {
-        "raid/core-command": "dev-main"
+        "php": "^8.2",
+        "raid/core-action": "dev-main",
+        "raid/core-auth": "dev-main",
+        "raid/core-command": "dev-main",
+        "raid/core-event": "dev-main",
+        "raid/core-gate": "dev-main",
+        "raid/core-model": "dev-main"
     },
     "autoload": {
         "psr-4": {

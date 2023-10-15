@@ -4,7 +4,7 @@ namespace Raid\Core\Repository\Commands;
 
 use Raid\Core\Command\Commands\PublishCommand;
 
-class PublishModuleCommand extends PublishCommand
+class PublishRepositoryCommand extends PublishCommand
 {
     /**
      * The console command name.
@@ -22,6 +22,5 @@ class PublishModuleCommand extends PublishCommand
     public function handle(): void
     {
         $this->publishCommand('repository-config');
-        $this->publishCommand('repository-stubs');
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Core\Repository\Traits\WithRepositoryProvider;
+use Modules\Core\Repository\Traits\Provider\WithRepositoryProvider;
+use Raid\Core\Repository\Commands\PublishRepositoryCommand;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
