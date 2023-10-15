@@ -1,6 +1,6 @@
 <?php
 
-namespace Raid\Core\Repository\Repositories\Contracts;
+namespace Raid\Core\Repository\Repositories\Contracts\Concerns;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;

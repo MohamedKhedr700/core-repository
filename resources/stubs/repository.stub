@@ -1,0 +1,14 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
+use Raid\Core\Repository\Repositories\Repository;
+
+class $CLASS_NAME$ extends Repository implements RepositoryInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public const UTILITY = '';
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Raid\Core\Repository\Repositories\Contracts;
+namespace Raid\Core\Repository\Repositories\Contracts\Concerns;
 
 use Raid\Core\Auth\Models\Authentication\Contracts\AccountInterface;
 

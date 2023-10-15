@@ -1,0 +1,39 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Raid\Core\Repository\Utilities\Contracts\UtilityInterface;
+use Raid\Core\Repository\Utilities\Utility;
+
+class $CLASS_NAME$ extends Utility implements UtilityInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public const MODULE_NAME = '';
+
+    /**
+     * {@inheritdoc}
+     */
+    public const ROUTE_SERVICE_PROVIDER = '';
+
+    /**
+     * {@inheritdoc}
+     */
+    public const REPOSITORY = '';
+
+    /**
+     * {@inheritdoc}
+     */
+    public const REPOSITORY_INTERFACE = '';
+
+    /**
+     * {@inheritdoc}
+     */
+    public const MODEL = '';
+
+    /**
+     * {@inheritdoc}
+     */
+    public const TRANSFORMER = '';
+}

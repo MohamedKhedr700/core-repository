@@ -6,8 +6,7 @@ use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
-use Modules\Core\Models\Contracts\ModelInterface;
-use Modules\Core\Models\Model;
+use Raid\Core\Model\Models\Contracts\ModelInterface;
 
 trait Retrievable
 {
@@ -164,7 +163,7 @@ trait Retrievable
     /**
      * {@inheritdoc}
      */
-    public function findOrFail(string|ModelInterface $id, array $columns = ['*'], bool $trashed = false): Model
+    public function findOrFail(string|ModelInterface $id, array $columns = ['*'], bool $trashed = false): ModelInterface
     {
         $isModelInstance = $this->isModelInstance($id);
 
@@ -182,7 +181,7 @@ trait Retrievable
     /**
      * {@inheritdoc}
      */
-    public function findOrFailBy(array $conditions, array $columns = ['*'], bool $trashed = false): Model
+    public function findOrFailBy(array $conditions, array $columns = ['*'], bool $trashed = false): ModelInterface
     {
         $query = $this->select($columns);
 

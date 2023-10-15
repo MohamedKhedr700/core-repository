@@ -2,6 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Repository\Traits\Provider\WithRepositoryProvider;
+use Raid\Core\Repository\Commands\CreateRepositoryCommand;
+use Raid\Core\Repository\Commands\CreateUtilityCommand;
 use Raid\Core\Repository\Commands\PublishRepositoryCommand;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -12,6 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
      * The commands to be registered.
      */
     protected array $commands = [
+        CreateRepositoryCommand::class,
+        CreateUtilityCommand::class,
         PublishRepositoryCommand::class,
     ];
 

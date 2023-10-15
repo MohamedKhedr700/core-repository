@@ -1,6 +1,6 @@
 <?php
 
-namespace Raid\Core\Repository\Repositories\Contracts;
+namespace Raid\Core\Repository\Repositories\Contracts\Concerns;
 
 interface ModulableInterface
 {
