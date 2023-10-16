@@ -10,12 +10,7 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
-    public const MODULE_NAME = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const ROUTE_SERVICE_PROVIDER = '';
+    public const MODEL = '';
 
     /**
      * {@inheritdoc}
@@ -25,15 +20,20 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
+    public const TRANSFORMER = '';
+
+    /**
+     * {@inheritdoc}
+     */
     public const REPOSITORY_INTERFACE = '';
 
     /**
      * {@inheritdoc}
      */
-    public const MODEL = '';
+    public const MODULE_NAME = '';
 
     /**
      * {@inheritdoc}
      */
-    public const TRANSFORMER = '';
+    public const ROUTE_SERVICE_PROVIDER = '';
 }

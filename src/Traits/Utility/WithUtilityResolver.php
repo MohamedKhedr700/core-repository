@@ -5,69 +5,41 @@ namespace Raid\Core\Repository\Traits\Utility;
 trait WithUtilityResolver
 {
     /**
-     * Module name.
+     * Repository name.
      */
-    public const MODULE_NAME = '';
+    public const MODULE = '';
 
     /**
-     * Route service provider.
-     */
-    public const ROUTE_SERVICE_PROVIDER = '';
-
-    /**
-     * Module repository.
-     */
-    public const REPOSITORY = '';
-
-    /**
-     * Module repository interface.
-     */
-    public const REPOSITORY_INTERFACE = '';
-
-    /**
-     * Module model.
+     * Repository model.
      */
     public const MODEL = '';
 
     /**
-     * Module transformer.
+     * Repository repository.
+     */
+    public const REPOSITORY = '';
+
+    /**
+     * Repository transformer.
      */
     public const TRANSFORMER = '';
 
     /**
-     * Get route service provider.
+     * Repository Route service provider.
      */
-    public static function routeServiceProvider(): string
-    {
-        return static::ROUTE_SERVICE_PROVIDER;
-    }
+    public const ROUTE_SERVICE_PROVIDER = '';
+
 
     /**
      * Get module name.
      */
     public static function module(): string
     {
-        return static::MODULE_NAME;
+        return static::MODULE;
     }
 
     /**
-     * Get module repository.
-     */
-    public static function repository(): string
-    {
-        return static::REPOSITORY;
-    }
-
-    /**
-     * Get module repository interface.
-     */
-    public static function repositoryInterface(): string
-    {
-        return static::REPOSITORY_INTERFACE;
-    }
-
-    /**
-     * Get a module model.
+     * Get a model.
      */
     public static function model(): string
     {
@@ -75,10 +47,26 @@ trait WithUtilityResolver
     }
 
     /**
-     * Get a module transformer.
+     * Get repository.
+     */
+    public static function repository(): string
+    {
+        return static::REPOSITORY;
+    }
+
+    /**
+     * Get a transformer.
      */
     public static function transformer(): string
     {
         return static::TRANSFORMER;
+    }
+
+    /**
+     * Get a route service provider.
+     */
+    public static function routeServiceProvider(): string
+    {
+        return static::ROUTE_SERVICE_PROVIDER;
     }
 }
