@@ -13,7 +13,7 @@ use Raid\Core\Repository\Repositories\Contracts\Concerns\GateableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModulableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\QueryableInterface;
-use Raid\Core\Repository\Repositories\Contracts\Concerns\RepositoryInterface;
+use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\TransformableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\UtilizableInterface;
 use Raid\Core\Repository\Traits\Repository\Accountable;
