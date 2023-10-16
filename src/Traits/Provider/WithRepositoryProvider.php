@@ -40,7 +40,7 @@ trait WithRepositoryProvider
      */
     private function registerRepositories(): void
     {
-        $repositories = config('repository.repositories');
+        $repositories = config('repository.repositories', []);
 
         foreach ($repositories as $repository) {
             $model = $repository::getModel();
