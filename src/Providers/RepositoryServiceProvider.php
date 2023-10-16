@@ -1,5 +1,7 @@
 <?php
 
+namespace Raid\Core\Repository\Providers;
+
 use Illuminate\Support\ServiceProvider;
 use Raid\Core\Repository\Traits\Provider\WithRepositoryProvider;
 use Raid\Core\Repository\Commands\CreateRepositoryCommand;
