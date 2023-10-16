@@ -14,14 +14,6 @@ abstract class Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
-    public static function config(string $key, $default = null): mixed
-    {
-        return config(static::module().'.'.$key, $default);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public static function trans(string $key, array $replace = [], string $locale = null): ?string
     {
         $key = static::module().'::'.$key;
@@ -32,16 +24,24 @@ abstract class Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
-    public static function actions(): array
+    public static function getConfig(string $key, $default = null): mixed
     {
-        return static::config('actions');
+        return config(static::module().'.'.$key, $default);
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function gates(): array
+    public static function getActions(): array
     {
-        return static::config('gates');
+        return static::getConfig('actions');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getGates(): array
+    {
+        return static::getConfig('gates');
     }
 }

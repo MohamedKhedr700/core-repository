@@ -7,8 +7,8 @@ trait Configurable
     /**
      * Get module config value.
      */
-    public static function config(string $key, mixed $default = null): mixed
+    public static function getConfig(string $key, mixed $default = null): mixed
     {
-        return config(static::module().'.'.$key, $default);
+        return static::utility()::getConfig($key, $default);
     }
 }

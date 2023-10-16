@@ -32,7 +32,6 @@ use Raid\Core\Repository\Traits\Repository\Utilizable;
 
 abstract class Repository implements RepositoryInterface, AccountableInterface, ActionableInterface, ConfigurableInterface, EventableInterface, FillableInterface, GateableInterface, ModelableInterface, ModulableInterface, QueryableInterface, TransformableInterface, UtilizableInterface
 {
-    use Accountable;
     use Actionable;
     use Configurable;
     use Deletable;
@@ -49,11 +48,9 @@ abstract class Repository implements RepositoryInterface, AccountableInterface, 
     /**
      * Create a new repository instance.
      */
-    public function __construct(ModelInterface $model)
+    public function __construct($model)
     {
         $this->setModel($model);
-
-        $this->setAccount(account());
     }
 
     /**
@@ -71,8 +68,8 @@ abstract class Repository implements RepositoryInterface, AccountableInterface, 
      */
     public function __call(string $method, mixed $arguments): mixed
     {
-        if (method_exists($this->model, $method)) {
-            return $this->model->{$method}(...$arguments);
+        if (method_exists(static::model(), $method)) {
+            return static::model()->{$method}(...$arguments);
         }
 
         throw new Exception(sprintf("Can't find method (%s) on %s or its model ", $method, static::class));

@@ -7,8 +7,8 @@ trait Modulable
     /**
      * Get repository module name.
      */
-    public static function module(): string
+    public static function getModule(): string
     {
-        return static::utility()::module();
+        return static::utility()::getModule();
     }
 }

@@ -7,8 +7,8 @@ trait Actionable
     /**
      * Get module actions.
      */
-    public static function actions(): array
+    public static function getActions(): array
     {
-        return static::utility()::actions();
+        return static::utility()::getActions();
     }
 }

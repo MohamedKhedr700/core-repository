@@ -7,8 +7,8 @@ trait Gateable
     /**
      * Get module gates.
      */
-    public static function gates(): array
+    public static function getGates(): array
     {
-        return static::utility()::gates();
+        return static::utility()::getGates();
     }
 }

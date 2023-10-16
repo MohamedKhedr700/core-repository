@@ -7,8 +7,8 @@ trait Transformable
     /**
      * Get repository transformer class.
      */
-    public static function transformer(): string
+    public static function getTransformer(): string
     {
-        return static::utility()::transformer();
+        return static::utility()::getTransformer();
     }
 }

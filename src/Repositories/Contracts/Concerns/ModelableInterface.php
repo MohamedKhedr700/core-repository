@@ -7,9 +7,14 @@ use Raid\Core\Model\Models\Contracts\ModelInterface;
 interface ModelableInterface
 {
     /**
+     * Get model class.
+     */
+    public static function getModel();
+
+    /**
      * Set model instance.
      */
-    public function setModel(ModelInterface $model): void;
+    public function setModel(object $model): void;
 
     /**
      * Get model instance or its property.

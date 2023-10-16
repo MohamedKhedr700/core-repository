@@ -9,12 +9,20 @@ trait Modelable
     /**
      * Repository model instance.
      */
-    private ModelInterface $model;
+    private object $model;
 
     /**
-     * Set model instance.
+     * {@inheritdoc}
      */
-    public function setModel(ModelInterface $model): void
+    public static function getModel()
+    {
+        return static::utility()::getModel();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setModel(object $model): void
     {
         $this->model = $model;
     }
