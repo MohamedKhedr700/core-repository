@@ -32,5 +32,22 @@ trait WithRepositoryProvider
      */
     private function registerRepository(): void
     {
+        $this->registerRepositories();
+    }
+
+    /**
+     * Register repositories.
+     */
+    private function registerRepositories(): void
+    {
+        $repositories = config('repository.repositories');
+
+        foreach ($repositories as $repository) {
+            $model = $repository::getModel();
+
+            $this->app->singleton($repository, function () use ($repository, $model) {
+                return new $repository(new $model);
+            });
+        }
     }
 }
