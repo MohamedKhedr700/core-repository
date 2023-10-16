@@ -12,15 +12,15 @@ interface UtilityInterface
     /**
      * Get module config value.
      */
-    public static function config(string $key, $default = null): mixed;
+    public static function getConfig(string $key, $default = null): mixed;
 
     /**
      * Get module actions.
      */
-    public static function actions(): array;
+    public static function getActions(): array;
 
     /**
      * Get module gates.
      */
-    public static function gates(): array;
+    public static function getGates(): array;
 }
