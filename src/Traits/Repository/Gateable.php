@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Repository;
 trait Gateable
 {
     /**
-     * Get module gates.
+     * {@inheritdoc}
      */
     public static function getGates(): array
     {

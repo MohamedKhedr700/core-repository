@@ -7,5 +7,5 @@ interface TransformableInterface
     /**
      * Get repository transformer class.
      */
-    public static function transformer(): string;
+    public static function getTransformer(): string;
 }

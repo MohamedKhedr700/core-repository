@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Repository;
 trait Transformable
 {
     /**
-     * Get repository transformer class.
+     * {@inheritdoc}
      */
     public static function getTransformer(): string
     {

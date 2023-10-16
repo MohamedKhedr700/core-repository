@@ -7,5 +7,5 @@ interface GateableInterface
     /**
      * Get module gates.
      */
-    public static function gates(): array;
+    public static function getGates(): array;
 }

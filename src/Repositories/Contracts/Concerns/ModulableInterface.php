@@ -7,5 +7,5 @@ interface ModulableInterface
     /**
      * Get repository module name.
      */
-    public static function module(): string;
+    public static function getModule(): string;
 }

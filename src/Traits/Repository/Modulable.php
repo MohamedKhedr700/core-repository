@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Repository;
 trait Modulable
 {
     /**
-     * Get repository module name.
+     * {@inheritdoc}
      */
     public static function getModule(): string
     {

@@ -7,5 +7,5 @@ interface ActionableInterface
     /**
      * Get module actions.
      */
-    public static function actions(): array;
+    public static function getActions(): array;
 }

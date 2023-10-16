@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Repository;
 trait Actionable
 {
     /**
-     * Get module actions.
+     * {@inheritdoc}
      */
     public static function getActions(): array
     {

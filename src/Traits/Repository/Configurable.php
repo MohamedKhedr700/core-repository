@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Repository;
 trait Configurable
 {
     /**
-     * Get module config value.
+     * {@inheritdoc}
      */
     public static function getConfig(string $key, mixed $default = null): mixed
     {
