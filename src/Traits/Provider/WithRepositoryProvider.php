@@ -69,7 +69,7 @@ trait WithRepositoryProvider
 
         $configPath = config('repository.repository_config_path');
 
-        $repositoryConfigPath = $configPath.'/'.$repositoryNameLower.'-config.php';
+        $repositoryConfigPath = $configPath.'/'.$repositoryNameLower.'.php';
 
         if (! file_exists($repositoryConfigPath)) {
             return;
