@@ -2,11 +2,9 @@
 
 namespace $NAMESPACE$;
 
-use Raid\Core\Repository\Transformers\Contracts\TransformerInterface;
 use Raid\Core\Repository\Transformers\Transformer;
 
-
-class $CLASS_NAME$ extends Transformer implements TransformerInterface
+class $CLASS_NAME$ extends Transformer
 {
     /**
      * {@inheritdoc}
