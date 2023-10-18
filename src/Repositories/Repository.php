@@ -21,7 +21,7 @@ use Raid\Core\Repository\Traits\Repository\Queryable;
 use Raid\Core\Repository\Traits\Repository\Retrievable;
 use Raid\Core\Repository\Traits\Repository\Transformable;
 
-abstract class Repository extends CoreRepository implements ConfigurableInterface, FillableInterface, ModelableInterface, ModulableInterface, QueryableInterface, RepositoryInterface, TransformableInterface, UtilizableInterface
+abstract class Repository extends CoreRepository implements RepositoryInterface, ConfigurableInterface, ModulableInterface, TransformableInterface, UtilizableInterface
 {
     use Configurable;
     use Deletable;
@@ -55,8 +55,8 @@ abstract class Repository extends CoreRepository implements ConfigurableInterfac
      */
     public function __call(string $method, mixed $arguments): mixed
     {
-        if (method_exists(static::model(), $method)) {
-            return static::model()->{$method}(...$arguments);
+        if (method_exists($this->model(), $method)) {
+            return $this->model()->{$method}(...$arguments);
         }
 
         throw new Exception(sprintf("Can't find method (%s) on %s or its model ", $method, static::class));

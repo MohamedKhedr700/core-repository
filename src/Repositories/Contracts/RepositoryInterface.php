@@ -6,8 +6,11 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Raid\Core\Model\Models\Contracts\ModelInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\FillableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\QueryableInterface;
 
-interface RepositoryInterface
+interface RepositoryInterface extends FillableInterface, ModelableInterface, QueryableInterface
 {
     /**
      * Retrieve all data from the database.
