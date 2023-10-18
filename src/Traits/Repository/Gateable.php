@@ -21,5 +21,4 @@ trait Gateable
     {
         return static::utility()::getGates();
     }
-
 }
