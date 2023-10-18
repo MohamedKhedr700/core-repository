@@ -17,7 +17,7 @@ abstract class CoreRepository
     /**
      * Get repository actions.
      */
-    public function getActions(): array
+    public static function getActions(): array
     {
         return static::utility()::getActions();
     }
@@ -25,7 +25,7 @@ abstract class CoreRepository
     /**
      * Get repository events.
      */
-    public function getEvents(): array
+    public static function getEvents(): array
     {
         return static::utility()::getEvents();
     }
@@ -33,7 +33,7 @@ abstract class CoreRepository
     /**
      * Get repository gates.
      */
-    public function getGates(): array
+    public static function getGates(): array
     {
         return static::utility()::getGates();
     }
