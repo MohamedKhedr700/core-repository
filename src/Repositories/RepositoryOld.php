@@ -3,22 +3,26 @@
 namespace Raid\Core\Repository\Repositories;
 
 use Exception;
-use Raid\Core\Action\Traits\Action\Actionable;
-use Raid\Core\Event\Events\Contracts\EventableInterface;
-use Raid\Core\Event\Traits\Event\Eventable;
-use Raid\Core\Gate\Gates\Contracts\GateableInterface;
-use Raid\Core\Gate\Traits\Gate\Gateable;
+use Raid\Core\Model\Models\Contracts\ModelInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\AccountableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\ActionableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ConfigurableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\EventableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\FillableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\GateableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModulableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\QueryableInterface;
+use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\TransformableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\UtilizableInterface;
-use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
+use Raid\Core\Repository\Traits\Repository\Accountable;
+use Raid\Core\Repository\Traits\Repository\Actionable;
 use Raid\Core\Repository\Traits\Repository\Configurable;
 use Raid\Core\Repository\Traits\Repository\Deletable;
+use Raid\Core\Repository\Traits\Repository\Eventable;
 use Raid\Core\Repository\Traits\Repository\Fillable;
+use Raid\Core\Repository\Traits\Repository\Gateable;
 use Raid\Core\Repository\Traits\Repository\Modelable;
 use Raid\Core\Repository\Traits\Repository\Modulable;
 use Raid\Core\Repository\Traits\Repository\Queryable;
@@ -26,16 +30,20 @@ use Raid\Core\Repository\Traits\Repository\Retrievable;
 use Raid\Core\Repository\Traits\Repository\Transformable;
 use Raid\Core\Repository\Traits\Repository\Utilizable;
 
-abstract class Repository extends CoreRepository implements RepositoryInterface, ConfigurableInterface, FillableInterface, ModelableInterface, ModulableInterface, QueryableInterface, TransformableInterface, UtilizableInterface
+abstract class RepositoryOld implements RepositoryInterface, AccountableInterface, ActionableInterface, ConfigurableInterface, EventableInterface, FillableInterface, GateableInterface, ModelableInterface, ModulableInterface, QueryableInterface, TransformableInterface, UtilizableInterface
 {
+    use Actionable;
     use Configurable;
     use Deletable;
+    use Eventable;
     use Fillable;
+    use Gateable;
     use Modelable;
     use Modulable;
     use Queryable;
     use Retrievable;
     use Transformable;
+    use Utilizable;
 
     /**
      * Create a new repository instance.

@@ -5,22 +5,27 @@ namespace Raid\Core\Repository\Utilities\Contracts;
 interface UtilityInterface
 {
     /**
-     * Translate module given message.
+     * Translate repository given message.
      */
     public static function trans(string $key, array $replace = [], string $locale = null): ?string;
 
     /**
-     * Get module config value.
+     * Get repository config value.
      */
     public static function getConfig(string $key, $default = null): mixed;
 
     /**
-     * Get module actions.
+     * Get repository actions.
      */
     public static function getActions(): array;
 
     /**
-     * Get module gates.
+     * Get repository events.
+     */
+    public static function getEvents(): array;
+
+    /**
+     * Get repository gates.
      */
     public static function getGates(): array;
 }

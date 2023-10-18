@@ -34,7 +34,15 @@ abstract class Utility implements UtilityInterface
      */
     public static function getActions(): array
     {
-        return static::getConfig('actions');
+        return static::getConfig('actions', []);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getEvents(): array
+    {
+        return static::getConfig('events', []);
     }
 
     /**
@@ -42,6 +50,6 @@ abstract class Utility implements UtilityInterface
      */
     public static function getGates(): array
     {
-        return static::getConfig('gates');
+        return static::getConfig('gates', []);
     }
 }
