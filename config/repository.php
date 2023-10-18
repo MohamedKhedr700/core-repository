@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'repository_config_path' => 'repository-config',
+    'repository_config_path' => base_path('repository-config'),
 
     /*
     |--------------------------------------------------------------------------
