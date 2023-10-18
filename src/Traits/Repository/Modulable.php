@@ -9,6 +9,6 @@ trait Modulable
      */
     public static function getModule(): string
     {
-        return static::utility()::getModule();
+        return static::utility()::module();
     }
 }
