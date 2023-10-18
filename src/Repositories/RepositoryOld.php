@@ -13,10 +13,9 @@ use Raid\Core\Repository\Repositories\Contracts\Concerns\GateableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModulableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\QueryableInterface;
-use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\TransformableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\UtilizableInterface;
-use Raid\Core\Repository\Traits\Repository\Accountable;
+use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
 use Raid\Core\Repository\Traits\Repository\Actionable;
 use Raid\Core\Repository\Traits\Repository\Configurable;
 use Raid\Core\Repository\Traits\Repository\Deletable;
@@ -30,7 +29,7 @@ use Raid\Core\Repository\Traits\Repository\Retrievable;
 use Raid\Core\Repository\Traits\Repository\Transformable;
 use Raid\Core\Repository\Traits\Repository\Utilizable;
 
-abstract class RepositoryOld implements RepositoryInterface, AccountableInterface, ActionableInterface, ConfigurableInterface, EventableInterface, FillableInterface, GateableInterface, ModelableInterface, ModulableInterface, QueryableInterface, TransformableInterface, UtilizableInterface
+abstract class RepositoryOld implements AccountableInterface, ActionableInterface, ConfigurableInterface, EventableInterface, FillableInterface, GateableInterface, ModelableInterface, ModulableInterface, QueryableInterface, RepositoryInterface, TransformableInterface, UtilizableInterface
 {
     use Actionable;
     use Configurable;

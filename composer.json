@@ -13,7 +13,8 @@
         "raid/core-command": "dev-main",
         "raid/core-event": "dev-main",
         "raid/core-gate": "dev-main",
-        "raid/core-model": "dev-main"
+        "raid/core-model": "dev-main",
+        "laravel/pint": "^1.10"
     },
     "autoload": {
         "psr-4": {
@@ -27,7 +28,12 @@
             ]
         }
     },
-    "authors": [
+    "scripts": {
+        "pint": [
+            "./vendor/bin/pint --config pint.json "
+            ]
+        },
+        "authors": [
         {
             "name": "mohamedkhedr700",
             "email": "mohamedkhedr700@gmail.com"

@@ -2,8 +2,6 @@
 
 namespace Raid\Core\Repository\Traits\Repository;
 
-use Raid\Core\Model\Models\Contracts\ModelInterface;
-
 trait Modelable
 {
     /**

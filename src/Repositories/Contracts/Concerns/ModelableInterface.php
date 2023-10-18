@@ -2,8 +2,6 @@
 
 namespace Raid\Core\Repository\Repositories\Contracts\Concerns;
 
-use Raid\Core\Model\Models\Contracts\ModelInterface;
-
 interface ModelableInterface
 {
     /**

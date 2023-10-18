@@ -3,11 +3,6 @@
 namespace Raid\Core\Repository\Repositories;
 
 use Exception;
-use Raid\Core\Action\Traits\Action\Actionable;
-use Raid\Core\Event\Events\Contracts\EventableInterface;
-use Raid\Core\Event\Traits\Event\Eventable;
-use Raid\Core\Gate\Gates\Contracts\GateableInterface;
-use Raid\Core\Gate\Traits\Gate\Gateable;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ConfigurableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\FillableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
@@ -24,9 +19,8 @@ use Raid\Core\Repository\Traits\Repository\Modulable;
 use Raid\Core\Repository\Traits\Repository\Queryable;
 use Raid\Core\Repository\Traits\Repository\Retrievable;
 use Raid\Core\Repository\Traits\Repository\Transformable;
-use Raid\Core\Repository\Traits\Repository\Utilizable;
 
-abstract class Repository extends CoreRepository implements RepositoryInterface, ConfigurableInterface, FillableInterface, ModelableInterface, ModulableInterface, QueryableInterface, TransformableInterface, UtilizableInterface
+abstract class Repository extends CoreRepository implements ConfigurableInterface, FillableInterface, ModelableInterface, ModulableInterface, QueryableInterface, RepositoryInterface, TransformableInterface, UtilizableInterface
 {
     use Configurable;
     use Deletable;

@@ -29,7 +29,6 @@ trait WithUtilityResolver
      */
     public const ROUTE_SERVICE_PROVIDER = '';
 
-
     /**
      * Get module name.
      */
