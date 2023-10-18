@@ -4,28 +4,37 @@ namespace Raid\Core\Repository\Repositories;
 
 use Exception;
 use Raid\Core\Model\Models\Contracts\ModelInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\ActionableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ConfigurableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\EventableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\FillableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\GateableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModulableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\QueryableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\TransformableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\UtilizableInterface;
 use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
+use Raid\Core\Repository\Traits\Repository\Actionable;
 use Raid\Core\Repository\Traits\Repository\Configurable;
 use Raid\Core\Repository\Traits\Repository\Deletable;
+use Raid\Core\Repository\Traits\Repository\Eventable;
 use Raid\Core\Repository\Traits\Repository\Fillable;
+use Raid\Core\Repository\Traits\Repository\Gateable;
 use Raid\Core\Repository\Traits\Repository\Modelable;
 use Raid\Core\Repository\Traits\Repository\Modulable;
 use Raid\Core\Repository\Traits\Repository\Queryable;
 use Raid\Core\Repository\Traits\Repository\Retrievable;
 use Raid\Core\Repository\Traits\Repository\Transformable;
 
-abstract class Repository extends CoreRepository implements RepositoryInterface, ConfigurableInterface, ModulableInterface, TransformableInterface, UtilizableInterface
+abstract class Repository extends CoreRepository implements RepositoryInterface, ActionableInterface, ConfigurableInterface, EventableInterface, GateableInterface, ModulableInterface, TransformableInterface, UtilizableInterface
 {
+    use Actionable;
     use Configurable;
     use Deletable;
+    use Eventable;
     use Fillable;
+    use Gateable;
     use Modelable;
     use Modulable;
     use Queryable;

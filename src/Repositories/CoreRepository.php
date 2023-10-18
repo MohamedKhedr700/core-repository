@@ -13,28 +13,4 @@ abstract class CoreRepository
     use Eventable;
     use Gateable;
     use Utilizable;
-
-    /**
-     * Get repository actions.
-     */
-    public static function getActions(): array
-    {
-        return static::utility()::getActions();
-    }
-
-    /**
-     * Get repository events.
-     */
-    public static function getEvents(): array
-    {
-        return static::utility()::getEvents();
-    }
-
-    /**
-     * Get repository gates.
-     */
-    public static function getGates(): array
-    {
-        return static::utility()::getGates();
-    }
 }
