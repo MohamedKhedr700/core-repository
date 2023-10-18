@@ -43,11 +43,41 @@ trait WithRepositoryProvider
         $repositories = config('repository.repositories', []);
 
         foreach ($repositories as $repository) {
-            $model = $repository::getModel();
-
-            $this->app->singleton($repository, function () use ($repository, $model) {
-                return new $repository(new $model);
-            });
+            $this->registerRepositoryInstance($repository);
+            $this->registerRepositoryConfig($repository);
         }
+    }
+
+    /**
+     * Register repository instance.
+     */
+    private function registerRepositoryInstance(string $repository): void
+    {
+        $model = $repository::getModel();
+
+        $this->app->singleton($repository, function () use ($repository, $model) {
+            return new $repository(new $model);
+        });
+    }
+
+    /**
+     * Register repository config.
+     */
+    private function registerRepositoryConfig(string $repository): void
+    {
+        $repositoryName = $repository::getModule();
+
+        $repositoryNameUpper = strtoupper($repositoryName);
+        $repositoryNameLower = strtolower($repositoryName);
+
+        $configPath = config('repository.repository_config_path');
+
+        $repositoryConfigPath = $configPath.'/'.$repositoryNameUpper.'-config.php';
+
+        $this->publishes([
+            $repositoryConfigPath => config_path($repositoryNameLower.'.php'),
+        ], 'config');
+
+        $this->mergeConfigFrom($repositoryConfigPath, $repositoryNameLower);
     }
 }

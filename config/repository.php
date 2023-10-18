@@ -4,6 +4,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Repository Config Path
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the repository config path that will be used by your application.
+    |
+    |
+    */
+
+    'repository_config_path' => app_path('repository-config'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Repositories
     |--------------------------------------------------------------------------
     |
