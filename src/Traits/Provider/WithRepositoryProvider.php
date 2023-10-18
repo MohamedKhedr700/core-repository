@@ -67,12 +67,15 @@ trait WithRepositoryProvider
     {
         $repositoryName = $repository::getModule();
 
-        $repositoryNameUpper = strtoupper($repositoryName);
         $repositoryNameLower = strtolower($repositoryName);
 
         $configPath = config('repository.repository_config_path');
 
-        $repositoryConfigPath = $configPath.'/'.$repositoryNameUpper.'-config.php';
+        $repositoryConfigPath = $configPath.'/'.$repositoryNameLower.'-config.php';
+
+        if (! file_exists($repositoryConfigPath)) {
+            return;
+        }
 
         $this->publishes([
             $repositoryConfigPath => config_path($repositoryNameLower.'.php'),
