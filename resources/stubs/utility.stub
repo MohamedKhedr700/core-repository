@@ -10,6 +10,11 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
+    public const MODULE = '';
+
+    /**
+     * {@inheritdoc}
+     */
     public const MODEL = '';
 
     /**
@@ -21,16 +26,6 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
      * {@inheritdoc}
      */
     public const TRANSFORMER = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const REPOSITORY_INTERFACE = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const MODULE_NAME = '';
 
     /**
      * {@inheritdoc}
