@@ -39,16 +39,16 @@ trait Queryable
     {
         $builder = $this->select($columns);
 
-        $sort = $options['filters']['sort'] ?? config('app.order_by');
+        $sort = $options['filters']['sort'] ?? config('app.order_by', 'created_at');
 
-        $direction = $options['filters']['direction'] ?? config('app.direction');
+        $direction = $options['filters']['direction'] ?? config('app.direction', 'desc');
 
         $sortArray = is_array($sort) ? $sort : [$sort];
 
         $directionArray = is_array($direction) ? $direction : [$direction];
 
         foreach ($sortArray as $key => $sort) {
-            $builder->orderBy($sort, $directionArray[$key] ?? config('app.direction'));
+            $builder->orderBy($sort, $directionArray[$key] ?? config('app.direction', 'desc'));
         }
 
         $builder->limit($options['filters']['perPage'] ?? -1);
