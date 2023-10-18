@@ -3,6 +3,7 @@
 namespace Raid\Core\Repository\Repositories;
 
 use Exception;
+use Raid\Core\Model\Models\Contracts\ModelInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ConfigurableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\FillableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModelableInterface;
