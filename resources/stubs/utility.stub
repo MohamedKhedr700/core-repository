@@ -10,7 +10,7 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
-    public const MODULE = '';
+    public const MODULE_LOWER = '';
 
     /**
      * {@inheritdoc}

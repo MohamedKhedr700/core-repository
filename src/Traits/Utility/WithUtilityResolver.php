@@ -5,9 +5,9 @@ namespace Raid\Core\Repository\Traits\Utility;
 trait WithUtilityResolver
 {
     /**
-     * Repository name.
+     * Repository name lower.
      */
-    public const MODULE = '';
+    public const MODULE_LOWER = '';
 
     /**
      * Repository name upper.
@@ -37,9 +37,17 @@ trait WithUtilityResolver
     /**
      * Get module name.
      */
-    public static function module(): string
+    public static function module(bool $upper = false): string
     {
-        return static::MODULE;
+        return $upper ? static::moduleUpper() : static::moduleLower();
+    }
+
+    /**
+     * Get module name upper.
+     */
+    public static function moduleLower(): string
+    {
+        return static::MODULE_LOWER;
     }
 
     /**

@@ -9,6 +9,6 @@ trait Modulable
      */
     public static function getModule(bool $upper = false): string
     {
-        return $upper ? static::utility()::moduleUpper() : static::utility()::module();
+        return static::utility()::module($upper);
     }
 }
