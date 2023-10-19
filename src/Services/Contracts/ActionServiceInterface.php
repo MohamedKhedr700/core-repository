@@ -34,9 +34,9 @@ interface ActionServiceInterface
     public function list(array $filters = []): LengthAwarePaginator;
 
     /**
-     * Get resource.
+     * Find resource.
      */
-    public function get(int $id): ModelInterface;
+    public function find(string|ModelInterface $id): ?ModelInterface;
 
     /**
      * Update resource.
@@ -44,7 +44,7 @@ interface ActionServiceInterface
     public function update(string|ModelInterface $id, array $data): ?ModelInterface;
 
     /**
-     * Pathc resource.
+     * Patch resource.
      */
     public function patch(string|ModelInterface $id, array $data): ?ModelInterface;
 

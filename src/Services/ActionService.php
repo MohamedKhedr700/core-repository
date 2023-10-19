@@ -63,7 +63,7 @@ abstract class ActionService implements ActionServiceInterface
     /**
      * Show resource by given ID.
      */
-    public function find(string|ModelInterface $id): ModelInterface
+    public function find(string|ModelInterface $id): ?ModelInterface
     {
         return static::repository()::action(Action::FIND, $id);
     }

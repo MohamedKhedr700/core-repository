@@ -33,7 +33,7 @@
         "pint": [
             "./vendor/bin/pint --config pint.json "
             ]
-        },
+    },
         "authors": [
         {
             "name": "mohamedkhedr700",
