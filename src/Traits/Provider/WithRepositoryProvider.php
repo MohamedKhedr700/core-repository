@@ -65,21 +65,18 @@ trait WithRepositoryProvider
      */
     private function registerRepositoryConfig(string $repository): void
     {
-        $repositoryNameLower = $repository::getModule();
-        $repositoryNameUpper = $repository::getModule(true);
-
         $configPath = config('repository.repository_config_path');
 
-        $repositoryConfigPath = $configPath.'/'.$repositoryNameUpper.'.php';
+        $repositoryConfigPath = $configPath.'/'.$repository::getModule(true).'.php';
 
         if (! file_exists($repositoryConfigPath)) {
             return;
         }
 
         $this->publishes([
-            $repositoryConfigPath => config_path($repositoryNameLower.'.php'),
+            $repositoryConfigPath => config_path($repository::getModule().'.php'),
         ], 'config');
 
-        $this->mergeConfigFrom($repositoryConfigPath, $repositoryNameLower);
+        $this->mergeConfigFrom($repositoryConfigPath, $repository::getModule());
     }
 }
