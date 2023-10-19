@@ -65,11 +65,14 @@ trait WithRepositoryProvider
      */
     private function registerRepositoryConfig(string $repository): void
     {
-        $repositoryNameLower = $repository::getModule();
+        $repositoryName = $repository::getModule();
+
+        $repositoryNameLower = strtolower($repositoryName);
+        $repositoryNameUpper = ucfirst($repositoryName);
 
         $configPath = config('repository.repository_config_path');
 
-        $repositoryConfigPath = $configPath.'/'.$repositoryNameLower.'.php';
+        $repositoryConfigPath = $configPath.'/'.$repositoryNameUpper.'.php';
 
         if (! file_exists($repositoryConfigPath)) {
             return;

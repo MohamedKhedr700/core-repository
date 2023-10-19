@@ -16,6 +16,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Repository Order By and Direction
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the repository order by and direction that will be used by your application.
+    |
+    |
+    */
+    'order_by' => 'created_at',
+
+    'direction' => 'desc',
+
+    /*
+    |--------------------------------------------------------------------------
     | Repositories
     |--------------------------------------------------------------------------
     |
