@@ -65,8 +65,8 @@ trait WithRepositoryProvider
      */
     private function registerRepositoryConfig(string $repository): void
     {
-        $repositoryName = $repository::getModule();
-
+        $repositoryNameLower = $repository::getModule();
+        $repositoryNameUpper = $repository::getModule(true);
 
         $configPath = config('repository.repository_config_path');
 
