@@ -23,6 +23,7 @@ return [
     |
     |
     */
+
     'order_by' => 'created_at',
 
     'direction' => 'desc',
