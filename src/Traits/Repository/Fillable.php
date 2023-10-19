@@ -30,7 +30,7 @@ trait Fillable
      *
      * @throws ModelNotFoundException
      */
-    public function update(string|ModelInterface $id, array $data): ?Model
+    public function update(string|ModelInterface $id, array $data): ?ModelInterface
     {
         $model = $this->isModelInstance($id) ? $id : $this->findOrFail($id);
 

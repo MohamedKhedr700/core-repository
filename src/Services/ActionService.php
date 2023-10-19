@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Raid\Core\Enum\Enums\Action;
 use Raid\Core\Model\Models\Contracts\ModelInterface;
 use Raid\Core\Repository\Services\Contracts\ActionServiceInterface;
-use Raid\Core\Repository\Services\Contracts\ServiceInterface;
 
 abstract class ActionService implements ActionServiceInterface
 {
@@ -72,7 +71,7 @@ abstract class ActionService implements ActionServiceInterface
     /**
      * Update resource.
      */
-    public function update(string|ModelInterface $id, array $data): ModelInterface|int
+    public function update(string|ModelInterface $id, array $data): ?ModelInterface
     {
         return static::repository()::action(Action::UPDATE, $id, $data);
     }
@@ -80,7 +79,7 @@ abstract class ActionService implements ActionServiceInterface
     /**
      * Patch resource.
      */
-    public function patch(string|ModelInterface $id, array $data): ModelInterface|int
+    public function patch(string|ModelInterface $id, array $data): ?ModelInterface
     {
         return static::repository()::action(Action::PATCH, $id, $data);
     }

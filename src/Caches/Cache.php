@@ -65,7 +65,7 @@ abstract class Cache implements CacheInterface
     /**
      * Remember the given callback result.
      */
-    protected function remember(\Closure $callback, ?string $key = null): mixed
+    protected function remember(\Closure $callback, string $key = null): mixed
     {
         $cacheKey = $this->makeCacheKey($key);
         $store = $this->cache;
@@ -80,7 +80,7 @@ abstract class Cache implements CacheInterface
      * Generate a cache key with the called method name and its arguments
      * If a key is provided, use that instead.
      */
-    private function makeCacheKey(?string $key = null): string
+    private function makeCacheKey(string $key = null): string
     {
         if ($key !== null) {
             return $key;
