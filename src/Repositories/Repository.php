@@ -61,7 +61,7 @@ abstract class Repository extends CoreRepository implements ActionableInterface,
      */
     public function __call(string $method, mixed $arguments): mixed
     {
-        if (method_exists($this->model(), $method)) {
+        if (method_exists($this->model(), $method) || $method === 'where') {
             return $this->model()->{$method}(...$arguments);
         }
 
