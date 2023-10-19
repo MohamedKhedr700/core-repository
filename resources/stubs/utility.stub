@@ -15,6 +15,11 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
+    public const MODULE_UPPER = '';
+
+    /**
+     * {@inheritdoc}
+     */
     public const MODEL = '';
 
     /**

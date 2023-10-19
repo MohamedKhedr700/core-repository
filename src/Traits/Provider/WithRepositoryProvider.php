@@ -67,8 +67,6 @@ trait WithRepositoryProvider
     {
         $repositoryName = $repository::getModule();
 
-        $repositoryNameLower = strtolower($repositoryName);
-        $repositoryNameUpper = ucfirst($repositoryName);
 
         $configPath = config('repository.repository_config_path');
 

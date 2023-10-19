@@ -10,6 +10,11 @@ trait WithUtilityResolver
     public const MODULE = '';
 
     /**
+     * Repository name upper.
+     */
+    public const MODULE_UPPER = '';
+
+    /**
      * Repository model.
      */
     public const MODEL = '';
@@ -35,6 +40,14 @@ trait WithUtilityResolver
     public static function module(): string
     {
         return static::MODULE;
+    }
+
+    /**
+     * Get module name upper.
+     */
+    public static function moduleUpper(): string
+    {
+        return static::MODULE_UPPER;
     }
 
     /**
