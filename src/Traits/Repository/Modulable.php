@@ -7,8 +7,8 @@ trait Modulable
     /**
      * {@inheritdoc}
      */
-    public static function getModule(string $format = 'lower'): string
+    public static function getModule(bool $upper = false): string
     {
-        return $format === 'upper' ? static::utility()::moduleUpper() : static::utility()::module();
+        return $upper ? static::utility()::moduleUpper() : static::utility()::module();
     }
 }
