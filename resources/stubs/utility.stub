@@ -16,24 +16,4 @@ class $CLASS_NAME$ extends Utility implements UtilityInterface
      * {@inheritdoc}
      */
     public const MODULE_UPPER = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const MODEL = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const REPOSITORY = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const TRANSFORMER = '';
-
-    /**
-     * {@inheritdoc}
-     */
-    public const ROUTE_SERVICE_PROVIDER = '';
 }
