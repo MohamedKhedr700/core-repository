@@ -2,8 +2,6 @@
 
 namespace Raid\Core\Repository\Traits\Utility;
 
-use ICanBoogie\Inflections\tr;
-
 trait WithRepository
 {
     /**

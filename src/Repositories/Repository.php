@@ -9,10 +9,10 @@ use Raid\Core\Repository\Repositories\Contracts\Concerns\ConfigurableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\EventableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\GateableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ModulableInterface;
-use Raid\Core\Repository\Repositories\Contracts\Concerns\TransformableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\UtilizableInterface;
 use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
 use Raid\Core\Repository\Traits\Repository\Actionable;
+use Raid\Core\Repository\Traits\Repository\Authenticatable;
 use Raid\Core\Repository\Traits\Repository\Configurable;
 use Raid\Core\Repository\Traits\Repository\Deletable;
 use Raid\Core\Repository\Traits\Repository\Eventable;
@@ -22,11 +22,11 @@ use Raid\Core\Repository\Traits\Repository\Modelable;
 use Raid\Core\Repository\Traits\Repository\Modulable;
 use Raid\Core\Repository\Traits\Repository\Queryable;
 use Raid\Core\Repository\Traits\Repository\Retrievable;
-use Raid\Core\Repository\Traits\Repository\Transformable;
 
 abstract class Repository extends CoreRepository implements ActionableInterface, ConfigurableInterface, EventableInterface, GateableInterface, ModulableInterface, RepositoryInterface, UtilizableInterface
 {
     use Actionable;
+    use Authenticatable;
     use Configurable;
     use Deletable;
     use Eventable;
