@@ -9,6 +9,6 @@ trait Transformable
      */
     public static function getTransformer(): string
     {
-        return static::utility()::getTansformer();
+        return static::utility()::getTransformer();
     }
 }
