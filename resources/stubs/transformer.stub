@@ -2,12 +2,15 @@
 
 namespace $NAMESPACE$;
 
-use Raid\Core\Repository\Transformers\Transformer;
+use Raid\Core\Controller\Transformers\Transformer;
 
 class $CLASS_NAME$ extends Transformer
 {
     /**
-     * {@inheritdoc}
+     * Transform the resource into an array.
      */
-    public const UTILITY = '';
+    public function transform(): array
+    {
+        return [];
+    }
 }

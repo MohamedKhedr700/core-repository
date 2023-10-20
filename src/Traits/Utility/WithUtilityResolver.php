@@ -13,14 +13,6 @@ trait WithUtilityResolver
     }
 
     /**
-     * Get a transformer.
-     */
-    public static function getTransformer(): ?string
-    {
-        return static::config('transformer');
-    }
-
-    /**
      * Get a route service provider.
      */
     public static function getRouteServiceProvider(): ?string

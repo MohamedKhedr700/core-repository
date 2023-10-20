@@ -24,7 +24,7 @@ use Raid\Core\Repository\Traits\Repository\Queryable;
 use Raid\Core\Repository\Traits\Repository\Retrievable;
 use Raid\Core\Repository\Traits\Repository\Transformable;
 
-abstract class Repository extends CoreRepository implements ActionableInterface, ConfigurableInterface, EventableInterface, GateableInterface, ModulableInterface, RepositoryInterface, TransformableInterface, UtilizableInterface
+abstract class Repository extends CoreRepository implements ActionableInterface, ConfigurableInterface, EventableInterface, GateableInterface, ModulableInterface, RepositoryInterface, UtilizableInterface
 {
     use Actionable;
     use Configurable;
@@ -36,7 +36,6 @@ abstract class Repository extends CoreRepository implements ActionableInterface,
     use Modulable;
     use Queryable;
     use Retrievable;
-    use Transformable;
 
     /**
      * Create a new repository instance.
