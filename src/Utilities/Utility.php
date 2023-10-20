@@ -4,6 +4,7 @@ namespace Raid\Core\Repository\Utilities;
 
 use Raid\Core\Repository\Traits\Utility\Translatable;
 use Raid\Core\Repository\Traits\Utility\WithModule;
+use Raid\Core\Repository\Traits\Utility\WithRepository;
 use Raid\Core\Repository\Traits\Utility\WithUtilityResolver;
 use Raid\Core\Repository\Utilities\Contracts\UtilityInterface;
 
@@ -11,7 +12,7 @@ abstract class Utility implements UtilityInterface
 {
     use Translatable;
     use WithModule;
-    use WithUtilityResolver;
+    use WithRepository;
 
     /**
      * {@inheritdoc}
