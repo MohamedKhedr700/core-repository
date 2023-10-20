@@ -14,7 +14,7 @@ trait Modelable
      */
     public static function getModel()
     {
-        return static::utility()::model();
+        return static::utility()::getModel();
     }
 
     /**

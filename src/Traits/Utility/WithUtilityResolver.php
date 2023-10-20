@@ -23,7 +23,7 @@ trait WithUtilityResolver
     /**
      * Get a route service provider.
      */
-    public static function routeServiceProvider(): ?string
+    public static function getRouteServiceProvider(): ?string
     {
         return static::config('route_service_provider');
     }
