@@ -5,6 +5,7 @@ namespace Raid\Core\Repository\Repositories;
 use Exception;
 use Raid\Core\Model\Models\Contracts\ModelInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ActionableInterface;
+use Raid\Core\Repository\Repositories\Contracts\Concerns\AuthenticatableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\ConfigurableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\EventableInterface;
 use Raid\Core\Repository\Repositories\Contracts\Concerns\GateableInterface;
@@ -23,7 +24,7 @@ use Raid\Core\Repository\Traits\Repository\Modulable;
 use Raid\Core\Repository\Traits\Repository\Queryable;
 use Raid\Core\Repository\Traits\Repository\Retrievable;
 
-abstract class Repository extends CoreRepository implements ActionableInterface, ConfigurableInterface, EventableInterface, GateableInterface, ModulableInterface, RepositoryInterface, UtilizableInterface
+abstract class Repository extends CoreRepository implements ActionableInterface, AuthenticatableInterface, ConfigurableInterface, EventableInterface, GateableInterface, ModulableInterface, RepositoryInterface, UtilizableInterface
 {
     use Actionable;
     use Authenticatable;

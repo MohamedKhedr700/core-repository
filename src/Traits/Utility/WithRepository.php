@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Utility;
 trait WithRepository
 {
     /**
-     * Get a model.
+     * {@inheritDoc}
      */
     public static function getModel(): ?string
     {
@@ -13,7 +13,7 @@ trait WithRepository
     }
 
     /**
-     * Get a route service provider.
+     * {@inheritDoc}
      */
     public static function getRouteServiceProvider(): ?string
     {

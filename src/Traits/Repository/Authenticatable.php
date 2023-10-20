@@ -5,7 +5,7 @@ namespace Raid\Core\Repository\Traits\Repository;
 trait Authenticatable
 {
     /**
-     * Get authenticator.
+     * {@inheritDoc}
      */
     public static function getAuthenticator(): ?string
     {
