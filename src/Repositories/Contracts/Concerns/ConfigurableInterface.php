@@ -7,5 +7,5 @@ interface ConfigurableInterface
     /**
      * Get module config value.
      */
-    public static function getConfig(string $key, mixed $default = null): mixed;
+    public static function config(string $key, mixed $default = null): mixed;
 }

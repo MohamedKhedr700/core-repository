@@ -7,8 +7,8 @@ trait Configurable
     /**
      * {@inheritdoc}
      */
-    public static function getConfig(string $key, mixed $default = null): mixed
+    public static function config(string $key, mixed $default = null): mixed
     {
-        return static::utility()::getConfig($key, $default);
+        return static::utility()::config($key, $default);
     }
 }

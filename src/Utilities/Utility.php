@@ -3,12 +3,14 @@
 namespace Raid\Core\Repository\Utilities;
 
 use Raid\Core\Repository\Traits\Utility\Translatable;
+use Raid\Core\Repository\Traits\Utility\WithModule;
 use Raid\Core\Repository\Traits\Utility\WithUtilityResolver;
 use Raid\Core\Repository\Utilities\Contracts\UtilityInterface;
 
 abstract class Utility implements UtilityInterface
 {
     use Translatable;
+    use WithModule;
     use WithUtilityResolver;
 
     /**
@@ -24,7 +26,7 @@ abstract class Utility implements UtilityInterface
     /**
      * {@inheritdoc}
      */
-    public static function getConfig(string $key, $default = null): mixed
+    public static function config(string $key, $default = null): mixed
     {
         return config(static::module().'.'.$key, $default);
     }
@@ -34,7 +36,7 @@ abstract class Utility implements UtilityInterface
      */
     public static function getActions(): array
     {
-        return static::getConfig('actions', []);
+        return static::config('actions', []);
     }
 
     /**
@@ -42,7 +44,7 @@ abstract class Utility implements UtilityInterface
      */
     public static function getEvents(): array
     {
-        return static::getConfig('events', []);
+        return static::config('events', []);
     }
 
     /**
@@ -50,6 +52,6 @@ abstract class Utility implements UtilityInterface
      */
     public static function getGates(): array
     {
-        return static::getConfig('gates', []);
+        return static::config('gates', []);
     }
 }

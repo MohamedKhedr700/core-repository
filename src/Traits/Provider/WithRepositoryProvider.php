@@ -43,21 +43,9 @@ trait WithRepositoryProvider
         $repositories = config('repository.repositories', []);
 
         foreach ($repositories as $repository) {
-            $this->registerRepositoryInstance($repository);
             $this->registerRepositoryConfig($repository);
+            $this->registerRepositoryInstance($repository);
         }
-    }
-
-    /**
-     * Register repository instance.
-     */
-    private function registerRepositoryInstance(string $repository): void
-    {
-        $model = $repository::getModel();
-
-        $this->app->singleton($repository, function () use ($repository, $model) {
-            return new $repository(new $model);
-        });
     }
 
     /**
@@ -78,5 +66,21 @@ trait WithRepositoryProvider
         ], 'config');
 
         $this->mergeConfigFrom($repositoryConfigPath, $repository::getModule());
+    }
+
+    /**
+     * Register repository instance.
+     */
+    private function registerRepositoryInstance(string $repository): void
+    {
+        $model = $repository::getModel();
+
+        if (! $model) {
+            return;
+        }
+
+        $this->app->singleton($repository, function () use ($repository, $model) {
+            return new $repository(new $model);
+        });
     }
 }

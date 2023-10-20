@@ -12,7 +12,7 @@ interface UtilityInterface
     /**
      * Get repository config value.
      */
-    public static function getConfig(string $key, $default = null): mixed;
+    public static function config(string $key, $default = null): mixed;
 
     /**
      * Get repository actions.
