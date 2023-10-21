@@ -10,6 +10,7 @@ use Raid\Core\Repository\Traits\Utility\WithEvents;
 use Raid\Core\Repository\Traits\Utility\WithGates;
 use Raid\Core\Repository\Traits\Utility\WithModule;
 use Raid\Core\Repository\Traits\Utility\WithRepository;
+use Raid\Core\Repository\Traits\Utility\WithTransformer;
 use Raid\Core\Repository\Utilities\Contracts\Concerns\WithActionInterface;
 use Raid\Core\Repository\Utilities\Contracts\Concerns\WithAuthenticatorInterface;
 use Raid\Core\Repository\Utilities\Contracts\Concerns\WithConfigInterface;
@@ -17,9 +18,10 @@ use Raid\Core\Repository\Utilities\Contracts\Concerns\WithEventInterface;
 use Raid\Core\Repository\Utilities\Contracts\Concerns\WithGateInterface;
 use Raid\Core\Repository\Utilities\Contracts\Concerns\WithModuleInterface;
 use Raid\Core\Repository\Utilities\Contracts\Concerns\WithRepositoryInterface;
+use Raid\Core\Repository\Utilities\Contracts\Concerns\WithTransformerInterface;
 use Raid\Core\Repository\Utilities\Contracts\UtilityInterface;
 
-abstract class Utility implements UtilityInterface, WithActionInterface, WithAuthenticatorInterface, WithConfigInterface, WithEventInterface, WithGateInterface, WithModuleInterface, WithRepositoryInterface
+abstract class Utility implements UtilityInterface, WithActionInterface, WithAuthenticatorInterface, WithConfigInterface, WithEventInterface, WithGateInterface, WithModuleInterface, WithRepositoryInterface, WithTransformerInterface
 {
     use Translatable;
     use WithActions;
@@ -29,6 +31,7 @@ abstract class Utility implements UtilityInterface, WithActionInterface, WithAut
     use WithGates;
     use WithModule;
     use WithRepository;
+    use WithTransformer;
 
     /**
      * {@inheritdoc}
