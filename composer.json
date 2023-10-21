@@ -14,7 +14,8 @@
         "raid/core-event": "dev-main",
         "raid/core-gate": "dev-main",
         "raid/core-model": "dev-main",
-        "laravel/pint": "^1.10"
+        "laravel/pint": "^1.10",
+        "spatie/laravel-fractal": "^6.0"
     },
     "autoload": {
         "psr-4": {
