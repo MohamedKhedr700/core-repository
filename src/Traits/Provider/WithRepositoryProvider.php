@@ -55,7 +55,7 @@ trait WithRepositoryProvider
     {
         $configPath = config('repository.repository_config_path');
 
-        $repositoryConfigPath = $configPath.'/'.$repository::getModule(true).'.php';
+        $repositoryConfigPath = $configPath.'/'.$repository::getModule().'.php';
 
         if (! file_exists($repositoryConfigPath)) {
             return;
