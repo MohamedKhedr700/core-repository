@@ -133,7 +133,29 @@ php artisan core:make-repo-config post
 ```
 
 ``` php
+<?php
+
+return [
+
+    'model' => null,
+];
+
 ```
+
+You must define the model class in the `model` key.
+
+``` php
+<?php
+
+return [
+
+    'model' => \App\Models\Post::class,
+];
+```
+
+The config file will be registered automatically.
+
+The repo
 
 <br>
 
