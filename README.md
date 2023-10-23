@@ -158,6 +158,21 @@ The config file will be registered.
 
 The repository will use the model class to perform the database operations.
 
+#### Utility
+
+The utility class is used to define the repository utility methods.
+
+The class has a `config` method that can be used to get the repository config values.
+
+``` php
+<?php
+
+$modelClass = UserUtility::config('model');
+
+// or use repository static call
+$modelClass = UserRepository::config('model');
+```
+
 <br>
 
 And that's it.
