@@ -25,6 +25,14 @@ class CreateRepositoryConfigCommand extends CreateCommand
     }
 
     /**
+     * Return the class name.
+     */
+    public function getClassName(): string
+    {
+        return $this->argument('classname', '');
+    }
+
+    /**
      * Return the stub file path.
      */
     public function getStubPath(): string
