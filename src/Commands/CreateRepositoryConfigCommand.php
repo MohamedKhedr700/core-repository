@@ -29,7 +29,7 @@ class CreateRepositoryConfigCommand extends CreateCommand
      */
     public function getClassName(): string
     {
-        return $this->argument('classname', '');
+        return strtolower($this->argument('classname', ''));
     }
 
     /**
