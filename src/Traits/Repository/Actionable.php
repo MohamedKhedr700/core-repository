@@ -9,9 +9,7 @@ trait Actionable
      */
     public static function actionableName(): string
     {
-        $classname = class_basename(static::actionable());
-
-        return strtolower(str_replace('Repository', '', $classname));
+        return static::getModule();
     }
 
     /**

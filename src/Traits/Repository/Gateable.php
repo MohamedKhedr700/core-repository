@@ -9,9 +9,7 @@ trait Gateable
      */
     public static function gateableName(): string
     {
-        $classname = class_basename(static::gateable());
-
-        return strtolower(str_replace('Repository', '', $classname));
+        return static::getModule();
     }
 
     /**

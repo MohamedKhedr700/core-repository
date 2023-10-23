@@ -9,9 +9,7 @@ trait Eventable
      */
     public static function eventableName(): string
     {
-        $classname = class_basename(static::eventable());
-
-        return strtolower(str_replace('Repository', '', $classname));
+        return static::getModule();
     }
 
     /**
