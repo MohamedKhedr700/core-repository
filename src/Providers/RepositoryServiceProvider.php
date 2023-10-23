@@ -4,6 +4,7 @@ namespace Raid\Core\Repository\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Raid\Core\Repository\Commands\CreateRepositoryCommand;
+use Raid\Core\Repository\Commands\CreateRepositoryConfigCommand;
 use Raid\Core\Repository\Commands\CreateTransformerCommand;
 use Raid\Core\Repository\Commands\CreateUtilityCommand;
 use Raid\Core\Repository\Commands\PublishRepositoryCommand;
@@ -18,6 +19,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     protected array $commands = [
         CreateRepositoryCommand::class,
+        CreateRepositoryConfigCommand::class,
         CreateTransformerCommand::class,
         CreateUtilityCommand::class,
         PublishRepositoryCommand::class,

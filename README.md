@@ -1,17 +1,17 @@
-# Core Model Package
+# Core Repository Package
 
-This package is responsible for handling all models in the system.
+This package is responsible for handling all repositories in the system.
 
 ## Installation
 
 ``` bash
-composer require raid/core-model
+composer require raid/core-repository
 ```
 
 ## Configuration
 
 ``` bash
-php artisan core:publish-model
+php artisan core:publish-repository
 ```
 
 
@@ -23,54 +23,112 @@ class PostController extends Controller
     /**
      * Invoke the controller method.
      */
-    public function __invoke(Request $request): JsonResponse
+    public function __invoke(StorePostRequest $request, UserRepository $userRepository): JsonResponse
     {
-        $post = new Post();
+        $post = $userRepository->create($request->validated());
 
-        // instead of this pattern.
-        // $post->title = $request->get('title');
-        // $title = $post->title;
-        
-        // we can use this pattern.
-        $post->fillAttribute('title', $request->get('title'));
-        
-        $title = $post->attribute('title', '');
-        
-        // this didn't save the model, but we can deal with that later.
+        return response()->json([
+            'resource' => $post,
+        ]);
     }
 }
 ```
 
 # How to work this
 
-Let's start with our model class ex:`Post` model,
+Let's create our first repository,
 you can use this command to create the model class.
 
 ``` bash
-php artisan core:make-model Post
+php artisan core:make-repository PostRepository
 ```
 
 ``` php
 <?php
 
-namespace App\Models;
+namespace App\Repositories;
 
-use Raid\Core\Model\Models\Contracts\ModelInterface;
-use Raid\Core\Model\Models\Model;
+use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
+use Raid\Core\Repository\Repositories\Repository;
 
-class Post extends Model implements ModelInterface
+class PostRepository extends Repository implements RepositoryInterface
 {
     /**
      * {@inheritdoc}
      */
-    protected $fillable = [];
+    public const UTILITY = '';
 }
 ```
 
-The model class must implement `ModelInterface` interface.
+The `PostRepository` class extends the `Repository` class, and implements the `RepositoryInterface` interface.
 
-The model class must extend `Model` class.
+The `Repository` class has a `UTILITY` constant, this constant is used to define the utility class for the repository.
 
+The `Utility` class is used to define the repository utility methods.
+
+You can use this command to create the utility class.
+
+``` bash
+php artisan core:make-utility PostUtility
+```
+
+``` php
+<?php
+
+namespace App\Utilities;
+
+use Raid\Core\Repository\Utilities\Contracts\UtilityInterface;
+use Raid\Core\Repository\Utilities\Utility;
+
+class PostUtility extends Utility implements UtilityInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public const MODULE_LOWER = '';
+
+    /**
+     * {@inheritdoc}
+     */
+    public const MODULE_UPPER = '';
+}
+```
+
+The `PostUtility` class extends the `Utility` class, and implements the `UtilityInterface` interface.
+
+The `Utility` class has two constants, `MODULE_LOWER` and `MODULE_UPPER`.
+
+The `MODULE_LOWER` constant is used to define the module name in lower case.
+
+The `MODULE_UPPER` constant is used to define the module name in upper case.
+
+#### Configure the repository
+
+Now we need to configure the repository in the `config/repository.php` file.
+
+``` php
+    'repositories' => [
+       // here we define our repositories
+        \App\Repositories\PostRepository::class,
+    ],
+```
+
+
+This will register the `PostRepository` class.
+
+#### Configure the model
+
+Each repository will have a configuration file,
+We can define the repository config directory in the `config/repository.php` file.
+
+``` php
+'repository_config_path' => base_path('repository-config'),
+```
+
+Now we need to create the repository config file.
+
+
+``` bash
 Great, now we can work with our new model class.
 
 ### Fill model attributes.
