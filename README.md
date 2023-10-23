@@ -23,12 +23,12 @@ class PostController extends Controller
     /**
      * Invoke the controller method.
      */
-    public function __invoke(StorePostRequest $request, UserRepository $userRepository): JsonResponse
+    public function __invoke(StoreUserRequest $request, UserRepository $userRepository): JsonResponse
     {
-        $post = $userRepository->create($request->validated());
+        $user = $userRepository->create($request->validated());
 
         return response()->json([
-            'resource' => $post,
+            'resource' => $user,
         ]);
     }
 }
@@ -40,7 +40,7 @@ Let's create our first repository,
 you can use this command to create the model class.
 
 ``` bash
-php artisan core:make-repository PostRepository
+php artisan core:make-repository UserRepository
 ```
 
 ``` php
@@ -51,7 +51,7 @@ namespace App\Repositories;
 use Raid\Core\Repository\Repositories\Contracts\RepositoryInterface;
 use Raid\Core\Repository\Repositories\Repository;
 
-class PostRepository extends Repository implements RepositoryInterface
+class UserRepository extends Repository implements RepositoryInterface
 {
     /**
      * {@inheritdoc}
@@ -60,7 +60,7 @@ class PostRepository extends Repository implements RepositoryInterface
 }
 ```
 
-The `PostRepository` class extends the `Repository` class, and implements the `RepositoryInterface` interface.
+The `UserRepository` class extends the `Repository` class, and implements the `RepositoryInterface` interface.
 
 The `Repository` class has a `UTILITY` constant, this constant is used to define the utility class for the repository.
 
@@ -69,7 +69,7 @@ The `Utility` class is used to define the repository utility methods.
 You can use this command to create the utility class.
 
 ``` bash
-php artisan core:make-utility PostUtility
+php artisan core:make-utility UserUtility
 ```
 
 ``` php
@@ -80,7 +80,7 @@ namespace App\Utilities;
 use Raid\Core\Repository\Utilities\Contracts\UtilityInterface;
 use Raid\Core\Repository\Utilities\Utility;
 
-class PostUtility extends Utility implements UtilityInterface
+class UserUtility extends Utility implements UtilityInterface
 {
     /**
      * {@inheritdoc}
@@ -94,7 +94,7 @@ class PostUtility extends Utility implements UtilityInterface
 }
 ```
 
-The `PostUtility` class extends the `Utility` class, and implements the `UtilityInterface` interface.
+The `UserUtility` class extends the `Utility` class, and implements the `UtilityInterface` interface.
 
 The `Utility` class has two constants, `MODULE_LOWER` and `MODULE_UPPER`.
 
@@ -107,18 +107,19 @@ The `MODULE_UPPER` constant is used to define the module name in upper case.
 Now we need to configure the repository in the `config/repository.php` file.
 
 ``` php
-    'repositories' => [
-       // here we define our repositories
-        \App\Repositories\PostRepository::class,
-    ],
+'repositories' => [
+   // here we define our repositories
+    \App\Repositories\UserRepository::class,
+],
 ```
 
 
-This will register the `PostRepository` class.
+This will register the `UserRepository` class.
 
 #### Configure the model
 
-Each repository will have a configuration file,
+Each repository will have a configuration file to define configuration for the repository.
+
 We can define the repository config directory in the `config/repository.php` file.
 
 ``` php
@@ -153,9 +154,9 @@ return [
 ];
 ```
 
-The config file will be registered automatically.
+The config file will be registered.
 
-The repo
+The repository will use the model class to perform the database operations.
 
 <br>
 
