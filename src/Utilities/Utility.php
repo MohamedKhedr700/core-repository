@@ -38,8 +38,16 @@ abstract class Utility implements UtilityInterface, WithActionInterface, WithAut
      */
     public static function trans(string $key, array $replace = [], string $locale = null): ?string
     {
-        $key = static::module().'::'.$key;
+        $key = static::moduleLower().'::'.$key;
 
         return static::translate($key, $replace, $locale);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function view(string $view): string
+    {
+        return static::moduleLower().'::'.$view;
     }
 }
