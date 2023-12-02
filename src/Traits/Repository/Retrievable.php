@@ -145,7 +145,7 @@ trait Retrievable
 
         $query = $this->withTrashedModel($query, $trashed);
 
-        return $isModelInstance ? $query->first() : $query->find($id);
+        return $isModelInstance ? $this->model() : $query->find($id);
     }
 
     /**
@@ -175,7 +175,7 @@ trait Retrievable
 
         $query = $this->withTrashedModel($query, $trashed);
 
-        return $isModelInstance ? $query->first() : $query->findOrFail($id);
+        return $isModelInstance ? $this->model() : $query->findOrFail($id);
     }
 
     /**
