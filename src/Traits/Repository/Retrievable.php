@@ -138,7 +138,7 @@ trait Retrievable
         if ($this->isModelInstance($id)) {
             $this->setModel($id);
 
-            return $this->model()->only($columns);
+            return $this->model();
         }
 
         $query = $this->select($columns);
@@ -168,7 +168,7 @@ trait Retrievable
         if ($this->isModelInstance($id)) {
             $this->setModel($id);
 
-            return $this->model()->only($columns);
+            return $this->model();
         }
 
         $query = $this->select($columns);
