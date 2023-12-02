@@ -135,17 +135,17 @@ trait Retrievable
      */
     public function find(string|ModelInterface $id, array $columns = ['*'], bool $trashed = false): ?ModelInterface
     {
-        $isModelInstance = $this->isModelInstance($id);
-
-        if ($isModelInstance) {
+        if ($this->isModelInstance($id)) {
             $this->setModel($id);
+
+            return $this->model()->only($columns);
         }
 
         $query = $this->select($columns);
 
         $query = $this->withTrashedModel($query, $trashed);
 
-        return $isModelInstance ? $this->model() : $query->find($id);
+        return $query->find($id);
     }
 
     /**
@@ -165,17 +165,17 @@ trait Retrievable
      */
     public function findOrFail(string|ModelInterface $id, array $columns = ['*'], bool $trashed = false): ModelInterface
     {
-        $isModelInstance = $this->isModelInstance($id);
-
-        if ($isModelInstance) {
+        if ($this->isModelInstance($id)) {
             $this->setModel($id);
+
+            return $this->model()->only($columns);
         }
 
         $query = $this->select($columns);
 
         $query = $this->withTrashedModel($query, $trashed);
 
-        return $isModelInstance ? $this->model() : $query->findOrFail($id);
+        return $query->findOrFail($id);
     }
 
     /**
