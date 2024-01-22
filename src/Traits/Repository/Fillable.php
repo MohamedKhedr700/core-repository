@@ -12,7 +12,7 @@ trait Fillable
     /**
      * {@inheritdoc}
      */
-    public function create(array $data): Model
+    public function create(array $data): ModelInterface
     {
         return $this->model()->create(ArrayKeys::toSnakeCase($data));
     }
