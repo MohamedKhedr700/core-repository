@@ -19,7 +19,7 @@ interface FillableInterface
     /**
      * Update the given record id.
      */
-    public function update(string|ModelInterface $id, array $data): ?ModelInterface;
+    public function update(string|ModelInterface $id, array $data): bool;
 
     /**
      * Update the given records ids.

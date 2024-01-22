@@ -30,11 +30,11 @@ trait Fillable
      *
      * @throws ModelNotFoundException
      */
-    public function update(string|ModelInterface $id, array $data): ?ModelInterface
+    public function update(string|ModelInterface $id, array $data): bool
     {
         $model = $this->isModelInstance($id) ? $id : $this->findOrFail($id);
 
-        return $model->update(ArrayKeys::toSnakeCase($data), ['upsert' => true]) ? $model : null;
+        return $model->update(ArrayKeys::toSnakeCase($data), ['upsert' => true]);
     }
 
     /**
